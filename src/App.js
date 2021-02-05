@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Accordion from "./components/Accordion";
 import Dropdown from "./components/Dropdown";
 import Search from "./components/Search";
+import Translate from "./components/Translate";
 import "./mystyle.css";
 const options = [
   {
@@ -39,16 +40,17 @@ const items = [
   },
 ];
 export default () => {
-  const [selected, setSelected] = useState(null);
+  //const [selected, setSelected] = useState(null);
   return (
     <div>
       {/*<Accordion items={items} />*/}
       {/*<Search />*/}
-      <Dropdown
+      {/*<Dropdown
         options={options}
         selected={selected}
         onSelectedChange={setSelected}
-      />
+      />*/}
+      <Translate />
     </div>
   );
 };
