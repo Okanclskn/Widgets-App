@@ -4,6 +4,7 @@ import Dropdown from "./components/Dropdown";
 import Search from "./components/Search";
 import Translate from "./components/Translate";
 import "./mystyle.css";
+import Route from "./Route";
 const options = [
   {
     id: 1,
@@ -40,9 +41,26 @@ const items = [
   },
 ];
 export default () => {
-  //const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(options[0]);
   return (
     <div>
+      <Route path="/">
+        <Accordion items={items} />
+      </Route>
+      <Route path="/list">
+        <Search />
+      </Route>
+      <Route path="/dropdown">
+        <Dropdown
+          label="Select a color"
+          options={options}
+          selected={selected}
+          onSelectedChange={setSelected}
+        />
+      </Route>
+      <Route path="/translate">
+        <Translate />
+      </Route>
       {/*<Accordion items={items} />*/}
       {/*<Search />*/}
       {/*<Dropdown
@@ -50,7 +68,6 @@ export default () => {
         selected={selected}
         onSelectedChange={setSelected}
       />*/}
-      <Translate />
     </div>
   );
 };
